@@ -23,3 +23,57 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.index-link {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  margin-top: 32px;
+  margin-left: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  gap: 16px;
+  width: 1440px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.gallery-image {
+  display: block;
+  width: 360px;
+  height: 200px;
+}
+
+
+input {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: block;
+  width: 360px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+textarea {
+  margin-top: 16px;
+  display: block;
+  width: 360px;
+  height: 80px;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 16px;
+  width: 95px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  background-color: #4E75FF;
+  border: none;
+  color: white;
+}
