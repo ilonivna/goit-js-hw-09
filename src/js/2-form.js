@@ -6,34 +6,37 @@ const textarea = document.querySelector("textarea");
 // ------- //
 
 function formInputHandler(event) {
-    event.preventDefault();
-    const email = input.value;
-    const message = textarea.value;
+    const email = input.value.trim();
+    const message = textarea.value.trim();
     const data = JSON.stringify({ email, message });
     localStorage.setItem(STORAGE_KEY, data);
-    console.log(data)
 }
+
 form.addEventListener("input", formInputHandler);
 
 // ------- //
 
-const jsn = localStorage.getItem(STORAGE_KEY);
-const data = JSON.parse(jsn);
-textarea.value = data.message;
+
+const data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+email: "",
+message: "",
+};
 input.value = data.email;
+textarea.value = data.message;
 
 // -------- //
 
 
 function formSubmitHandler(event) {
-    event.preventDefault()
+    event.preventDefault();
     if (input.value === "" || textarea.value === "") {
-        alert("Fill up the data!")
-    } 
-        console.log(data)
-    localStorage.removeItem(STORAGE_KEY);
-    textarea.value = "";
-    input.value = ""
+        return alert("Fill up the data!")
+    } else {
+        console.log(data);
+        localStorage.removeItem(STORAGE_KEY);
+        textarea.value = "";
+        input.value = "";
+    }
 }
 
 form.addEventListener("submit", formSubmitHandler);
